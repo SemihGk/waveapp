@@ -2,12 +2,10 @@ var fs = require('fs'),
     path = require('path'),
     Sequelize = require('sequelize'),
     _ = require('lodash'),
-    config = require('../../config'),
+    config = require('../../config')['mysql'],
     db = {};
 
-var sequelize = new Sequelize(config.database, config.username, config.password, {
-    maxConcurrentQueries: 100
-});
+var sequelize = new Sequelize(config.database, config.username, config.password, config);
 
 fs
     .readdirSync(__dirname)

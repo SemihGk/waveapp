@@ -13,9 +13,9 @@
 </head>
 
 <body>
-  <div class="main-container">
-      <form>
-        <div class="row">
+  <div>
+      <form class="main-container">
+        <div class="select-area">
           <div class="column">
             <div id="drop-box">
               <p>Select Files</p>
@@ -23,9 +23,14 @@
           </div>
           <div class="column">
             <input type="file" name="upl" id="upl" />
+            <label for="upl" class="custom-file-upload" onClick="this.form.reset()">
+                Browse
+            </label>
           </div>
         </div>
       </form>
+      <div class="payroll-table">
+      </div>
   </div>
   <script src="bundle.js"></script>
 

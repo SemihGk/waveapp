@@ -6,9 +6,8 @@ var express = require('express'),
     http = require('http').Server(app),
     util = require('util'),
     path = require('path'),
-    bodyParser = require('body-parser');
-
-// var MySQLStore = require('connect-mysql')({ session: session });
+    bodyParser = require('body-parser'),
+    config = require('./config');
 
 app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname, 'dist/index.html'));
@@ -19,32 +18,16 @@ app.use(express.static(__dirname + '/dist'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-// var db = require('./server/models');
-// var secrets = require('./config/secrets');
-
-//MySQL Store
-// app.use(session({
-//   store: new MySQLStore({
-//     config: secrets.mysql,
-//     table: secrets.mysql.sessionTable
-//   })
-// }));
-
-require('./server/models');
+// route direction
 require('./server/modules/payroll/routes')(app);
 
-// app.route('/file')
-//   .post(upload.single('file'), function(req, res) {
-//     getFileStatus(function(err, donut, bar) {
-//       if(err) return res.status(400).send(err);
-//       res.send({ bar: bar, donut: donut });
-//     });
-//   });
-
-app.listen(8080, function() {
-    console.log("Great! App is ready and running on localhost:8080");
+const models = require('./server/models');
+// sync() will create all table if they doesn't exist in database
+models.sequelize.sync().then(function () {
+    app.listen(config.port, function() {
+        console.log("Great! App is ready and running on localhost:" + config.port);
+    });
 });
-
 
 /*
  * Development purpose to see consoles line and file

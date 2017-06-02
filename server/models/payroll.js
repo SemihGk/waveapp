@@ -5,8 +5,7 @@ module.exports = function(sequelize, DataTypes) {
         "date": DataTypes.DATE,
         "hours worked": DataTypes.FLOAT,
         "employee id": DataTypes.INTEGER,
-        "job group": DataTypes.STRING,
-        "_created": DataTypes.DATE
+        "job group": DataTypes.STRING
     });
 
     return Payroll;

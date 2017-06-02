@@ -1,25 +1,14 @@
-# Wave Software Development Challenge
+# Requirements
+1. Node JS (v8.0) (V8 is required)
+2. Mysql (Ver 14.14 Distrib 5.7.18) (Recommended, not required);
 
-Applicants for the [Software
-developer](https://wave.bamboohr.co.uk/jobs/view.php?id=1) role at Wave must
-complete the following challenge, and submit a solution prior to the onsite
-interview.
 
-The purpose of this exercise is to create something that we can work on
-together during the onsite. We do this so that you get a chance to collaborate
-with Wavers during the interview in a situation where you know something better
-than us (it's your code, after all!)
+# Instructions
+  Created a script file for auto installing node and mysql for MAC environment
+  just run `bash install_requirements` to install requirements
+  Then please change `config.js` file and fill your mysql password;
+  Lastly, run `npm start`
 
-There isn't a hard deadline for this exercise; take as long as you need to
-complete it. However, in terms of total time spent actively working on the
-challenge, we ask that you not spend more than a few hours, as we value your
-time and are happy to leave things open to discussion in the on-site interview.
-
-Please use whatever programming language and framework you feel the most
-comfortable with.
-
-Feel free to email [dev.careers@waveapps.com](dev.careers@waveapps.com) if you
-have any questions.
 
 ## Project Description
 

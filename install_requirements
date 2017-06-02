@@ -1,0 +1,11 @@
+printf "\n==> Your brew is going to be updating.... <==\n"
+brew update
+brew doctor
+printf "\n==> Mysql is installing.... <==\n"
+brew install mysql
+mysql.server restart
+printf "\n==> Please allow to create mysql database.. <==\n"
+mysql -u root -p -e "create database wave_test"
+printf "\n==> Node js is installing.... <==\n"
+brew install node@8
+printf "\n==> All is Done. Now, please change config.js file. Thanks <==\n"
