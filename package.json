@@ -4,7 +4,7 @@
   "description": "test app",
   "main": "index.js",
   "scripts": {
-    "start": "webpack && node .",
+    "start": "npm install && webpack && node .",
     "test": "npm test"
   },
   "repository": {
